@@ -1,14 +1,12 @@
 <?php 
 
 /* Global Helper Functions */
-use Jenssegers\Blade\Blade;
-use Psr\Http\Message\ResponseInterface as Response;
-
 use Illuminate\Support\Arr;
 use Illuminate\Support\Str;
 use Illuminate\Support\Collection;
 
 /**
+ * env
  * base_path
  * config_path
  * resources_path
@@ -23,6 +21,18 @@ use Illuminate\Support\Collection;
  * data_get
  * data_set
  */
+
+ if (!function_exists('env')){
+    function env($key, $default = false)
+    {
+        $value = getenv($key);
+
+        throw_when(!$value and !$default, "{key} is not a defined .env variable and has not default value");
+
+        return $value or $default;
+    }
+ }
+
 
  if (!function_exists('base_path')){
     function base_path($path = ''){

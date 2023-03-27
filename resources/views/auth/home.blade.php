@@ -3,7 +3,7 @@
 @section('content')
     <div style="padding:10px">
         <p>
-            {{$name}} Home Page
+            Home Page {{env('APP_NAME')}}
         </p>
     </div>
 @endsection
