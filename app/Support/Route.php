@@ -2,13 +2,12 @@
 
 namespace App\Support;
 
-use Slim\App;
 use Illuminate\Support\Str;
 
 class Route{
-    protected static App $app;
+    protected static $app;
 
-    public static function setup(App &$app){
+    public static function setup(&$app){
         self::$app = $app;
 
         return $app;
