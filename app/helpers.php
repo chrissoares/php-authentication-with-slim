@@ -39,8 +39,8 @@ use Illuminate\Support\Collection;
         return __DIR__ . "/../{$path}";
     }
  }
-
- if (!function_exists('database_path'))
+ 
+  if (!function_exists('database_path'))
  {
      function database_path($path = '')
      {

@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Autoload global dependencies and allow for auto-loading local dependencies via use
  */
