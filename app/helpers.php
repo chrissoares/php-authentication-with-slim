@@ -6,6 +6,8 @@ use Illuminate\Support\Str;
 use Illuminate\Support\Collection;
 
 /**
+ * factory
+ * collection
  * env
  * base_path
  * config_path
@@ -21,6 +23,24 @@ use Illuminate\Support\Collection;
  * data_get
  * data_set
  */
+
+ if (!function_exists('collect'))
+ {
+    function collect($items)
+    {
+        return new Collection($items);
+    }
+ }
+
+ if (!function_exists('factory'))
+ {
+    function factory(string $model, int $count = 1)
+    {
+        $factory = new Factory;
+
+        return $factory($model, $count);
+    }
+ }
 
  if (!function_exists('env')){
     function env($key, $default = false)
@@ -39,8 +59,8 @@ use Illuminate\Support\Collection;
         return __DIR__ . "/../{$path}";
     }
  }
-
- if (!function_exists('database_path'))
+ 
+  if (!function_exists('database_path'))
  {
      function database_path($path = '')
      {

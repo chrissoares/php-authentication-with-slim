@@ -8,6 +8,7 @@ use App\Support\Route;
 class RouteServiceProvider extends ServiceProvider{
 
     public function register(){
+        // dd("kkk");
         Route::setup($this->app);
 
         $this->bind(RouteGroup::class, fn() => new RouteGroup($this->app));
