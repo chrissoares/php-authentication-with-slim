@@ -4,18 +4,16 @@
 
 namespace App\Http\Controllers;
 
-use DB;
+use App\User;
 
 class ApiController
 {
-    public function index($response, DB $db)
+    public function index($response, User $user)
     {
-        echo "usuario";
+        // $user = $user::find(1);
         // $user = Db::table('users')->find(1);
-        $user = $db->table('users')->find(1);
-        dd($user);
-        
-        $response->getBody()->write(json_encode($user, JSON_PRETTY_PRINT));
+       
+        $response->getBody()->write(json_encode($user::get(), JSON_PRETTY_PRINT));
 
         return $response;
     }

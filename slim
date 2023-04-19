@@ -1,0 +1,29 @@
+<?php
+require_once __DIR__ . '/vendor/autoload.php';
+
+$app = require base_path('bootstrap/console.php');
+
+/**
+ * Resolve Console Kernel
+ */
+$kernel = $app->resolve(\App\Console\ConsoleKernel::class);
+
+/**
+ * Bootstrap Console Application
+ */
+$kernel->bootstrapApplication();
+
+/**
+ * Resolve Synfony Console Command
+ */
+$console = $app->resolve(\Symfony\Component\Console\Application::class);
+
+/**
+ * Run Command
+ */
+$console->run();
+
+/**
+ * Exit Console Application
+ */
+exit();

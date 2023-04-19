@@ -12,7 +12,6 @@ class DatabaseServiceProvider extends ServiceProvider
 		$options = data_get(config('database.connections'), config('database.default'));
 
 		$capsule = new DB;
-		echo "Aki foi";
 		$capsule->addConnection($options);
 		$capsule->setAsGlobal();
 		$capsule->bootEloquent();
